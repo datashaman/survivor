@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvon75mcvo1dn"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_h6u27"]
+[ext_resource type="Texture2D" uid="uid://ca7bj0ptbgdr2" path="res://assets/ship.png" id="2_n2edw"]
+[ext_resource type="PackedScene" uid="uid://42lw7qonpw6f" path="res://bullet.tscn" id="3_3y662"]
+[ext_resource type="Texture2D" uid="uid://dg10b81q0737v" path="res://assets/crosshairs.png" id="3_1430k"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_h6u27")
+bullet_scene = ExtResource("3_3y662")
+metadata/_edit_group_ = true
+
+[node name="Crosshairs" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Crosshairs"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_1430k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_n2edw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.57079
+build_mode = 1
+polygon = PackedVector2Array(-7, -37, 8, -37, 12, -14, 47, -5, 46, 25, 7, 36, -8, 35, -45, 24, -50, -9, -12, -14)
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(44, 0)
+
+[node name="Bullet" parent="." instance=ExtResource("3_3y662")]
