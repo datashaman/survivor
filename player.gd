@@ -9,7 +9,8 @@ extends CharacterBody2D
 var mouse_pos
 
 func _init():
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	# Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	pass
 
 func shoot():
 	var b = bullet_scene.instantiate()
