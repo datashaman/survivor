@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://kvv85v1trfxp"]
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+position = Vector2(300, 300)
+lifetime = 2.0
+explosiveness = 0.44
+randomness = 0.25
+emission_shape = 1
+emission_sphere_radius = 88.36
+direction = Vector2(0, -1)
+spread = 25.0
+initial_velocity_min = 100.0
+initial_velocity_max = 800.0
+scale_amount_min = 8.0
+scale_amount_max = 8.0

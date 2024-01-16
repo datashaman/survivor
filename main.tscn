@@ -1,20 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5rcgxkviembg"]
+[gd_scene load_steps=5 format=3 uid="uid://b5rcgxkviembg"]
 
+[ext_resource type="Texture2D" uid="uid://cmpe0r5s1w4lx" path="res://assets/ground.png" id="1_8ybeu"]
 [ext_resource type="PackedScene" uid="uid://bvon75mcvo1dn" path="res://player.tscn" id="1_fq63o"]
 [ext_resource type="PackedScene" uid="uid://bpecfnfp3ny8g" path="res://enemy.tscn" id="2_ajytd"]
 
 [sub_resource type="Environment" id="Environment_gqlbe"]
 background_mode = 1
 background_color = Color(0, 0.54902, 0, 1)
+ambient_light_source = 1
+ambient_light_color = Color(0, 0.866667, 0, 1)
 
 [node name="Main" type="Node2D"]
+
+[node name="Ground" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(128, 128)
+texture = ExtResource("1_8ybeu")
+region_enabled = true
+region_rect = Rect2(0, 0, 3840, 2160)
 
 [node name="Player" parent="." instance=ExtResource("1_fq63o")]
 position = Vector2(200, 200)
 motion_mode = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
+color = Color(0.168627, 0.168627, 0.168627, 1)
 
 [node name="Enemy" parent="." instance=ExtResource("2_ajytd")]
 position = Vector2(500, 200)
